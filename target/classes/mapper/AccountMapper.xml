@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="csu.web.mypetstore.persistence.AccountDao">
+
+    <!-- 根据用户名查询账户 -->
+    <select id="getAccountByUsername" resultType="csu.web.mypetstore.domain.Account">
+        SELECT USERID AS username FROM ACCOUNT WHERE USERID = #{username}
+    </select>
+
+    <!-- 根据用户名和密码查询账户（多表关联查询） -->
+    <select id="getAccountByUsernameAndPassword" resultType="csu.web.mypetstore.domain.Account">
+        SELECT
+            SIGNON.USERNAME AS username,
+            SIGNON.PASSWORD AS password,
+            ACCOUNT.EMAIL AS email,
+            ACCOUNT.FIRSTNAME AS firstName,
+            ACCOUNT.LASTNAME AS lastName,
+            ACCOUNT.STATUS AS status,
+            ACCOUNT.ADDR1 AS address1,
+            ACCOUNT.ADDR2 AS address2,
+            ACCOUNT.CITY AS city,
+            ACCOUNT.STATE AS state,
+            ACCOUNT.ZIP AS zip,
+            ACCOUNT.COUNTRY AS country,
+            ACCOUNT.PHONE AS phone,
+            PROFILE.LANGPREF AS languagePreference,
+            PROFILE.FAVCATEGORY AS favoriteCategoryId,
+            PROFILE.MYLISTOPT AS listOption,
+            PROFILE.BANNEROPT AS bannerOption,
+            BANNERDATA.BANNERNAME AS bannerName
+        FROM ACCOUNT, PROFILE, SIGNON, BANNERDATA
+        WHERE ACCOUNT.USERID = #{username}
+          AND SIGNON.PASSWORD = #{password}
+          AND SIGNON.USERNAME = ACCOUNT.USERID
+          AND PROFILE.USERID = ACCOUNT.USERID
+          AND PROFILE.FAVCATEGORY = BANNERDATA.FAVCATEGORY(+)
+    </select>
+
+    <!-- 插入账户信息到 ACCOUNT 表 -->
+    <insert id="insertAccount">
+        INSERT INTO ACCOUNT (USERID, EMAIL, FIRSTNAME, LASTNAME, STATUS, ADDR1, ADDR2, CITY, STATE, ZIP, COUNTRY, PHONE)
+        VALUES (#{username}, #{email}, #{firstName}, #{lastName}, 'P', #{address1}, #{address2}, #{city}, #{state}, #{zip}, #{country}, #{phone})
+    </insert>
+
+    <!-- 插入用户配置到 PROFILE 表 -->
+    <insert id="insertProfile">
+        INSERT INTO PROFILE (USERID, LANGPREF, FAVCATEGORY, MYLISTOPT, BANNEROPT)
+        VALUES (#{username}, #{languagePreference}, #{favoriteCategoryId}, #{listOption}, #{bannerOption})
+    </insert>
+
+    <!-- 插入登录信息到 SIGNON 表 -->
+    <insert id="insertSignon">
+        INSERT INTO SIGNON (USERNAME, PASSWORD)
+        VALUES (#{username}, #{password})
+    </insert>
+
+    <!-- 更新账户信息 -->
+    <update id="updateAccount">
+        UPDATE ACCOUNT
+        SET EMAIL = #{email},
+            FIRSTNAME = #{firstName},
+            LASTNAME = #{lastName},
+            ADDR1 = #{address1},
+            ADDR2 = #{address2},
+            CITY = #{city},
+            STATE = #{state},
+            ZIP = #{zip},
+            COUNTRY = #{country},
+            PHONE = #{phone}
+        WHERE USERID = #{username}
+    </update>
+
+    <!-- 更新用户配置 -->
+    <update id="updateProfile">
+        UPDATE PROFILE
+        SET LANGPREF = #{languagePreference},
+            FAVCATEGORY = #{favoriteCategoryId},
+            MYLISTOPT = #{listOption},
+            BANNEROPT = #{bannerOption}
+        WHERE USERID = #{username}
+    </update>
+
+    <!-- 更新登录密码 -->
+    <update id="updateSignon">
+        UPDATE SIGNON
+        SET PASSWORD = #{password}
+        WHERE USERNAME = #{username}
+    </update>
+
+</mapper>

@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "MyPetStoreApplication",
+            "request": "launch",
+            "mainClass": "csu.web.mypetstore.MyPetStoreApplication",
+            "projectName": "my-pet-store"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DBUtil<my-pet-store>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "csu.web.mypetstore.persistence.DBUtil",
+            "projectName": "my-pet-store",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
