@@ -1,0 +1,50 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: my-pet-store
+  
+  # 数据源配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mypetstore?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    
+  # SQL初始化脚本配置（可选，如果不需要自动初始化请注释掉）
+  # sql:
+  #   init:
+  #     mode: always
+  #     schema-locations: classpath:schema.sql
+  #     data-locations: classpath:data.sql
+
+# MyBatis Plus 配置
+mybatis-plus:
+  # Mapper XML文件位置
+  mapper-locations: classpath*:mapper/**/*.xml
+  # 实体类扫描路径
+  type-aliases-package: csu.web.mypetstore.domain
+  configuration:
+    # 开启驼峰命名转换
+    map-underscore-to-camel-case: true
+    # 打印SQL日志（开发环境）
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      # 主键策略：ASSIGN_ID（雪花算法）
+      id-type: ASSIGN_ID
+      # 逻辑删除字段名
+      logic-delete-field: deleted
+      # 逻辑删除值
+      logic-delete-value: 1
+      # 逻辑未删除值
+      logic-not-delete-value: 0
+
+# 日志配置
+logging:
+  level:
+    csu.web.mypetstore: debug
+    csu.web.mypetstore.persistence: debug
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n'

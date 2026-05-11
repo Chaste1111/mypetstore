@@ -42,7 +42,6 @@
               @click="goToProduct(product.productId)"
             >
               <div class="product-image">
-                <img src="@/assets/images/pet-placeholder.png" alt="产品图片" v-if="false" />
                 <div class="placeholder-img">🐶</div>
               </div>
               <div class="product-info">
