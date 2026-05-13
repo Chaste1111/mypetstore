@@ -4,11 +4,18 @@
 
     <!-- 插入订单 -->
     <insert id="insertOrder">
-        INSERT INTO ORDERS (ORDERID, USERID, ORDERDATE, SHIPADDR1, SHIPADDR2, SHIPCITY, SHIPSTATE, SHIPZIP, SHIPCOUNTRY,
-                           BILLADDR1, BILLADDR2, BILLCITY, BILLSTATE, BILLZIP, BILLCOUNTRY, TOTALPRICE, PAYMENTTYPE, STATUS)
-        VALUES (#{orderId}, #{username}, #{orderDate}, #{shippingAddress1}, #{shippingAddress2}, #{shippingCity},
-                #{shippingState}, #{shippingZip}, #{shippingCountry}, #{billingAddress1}, #{billingAddress2},
-                #{billingCity}, #{billingState}, #{billingZip}, #{billingCountry}, #{totalPrice}, #{paymentType}, 'P')
+        INSERT INTO ORDERS (ORDERID, USERID, ORDERDATE, 
+                           SHIPADDR1, SHIPADDR2, SHIPCITY, SHIPSTATE, SHIPZIP, SHIPCOUNTRY,
+                           BILLADDR1, BILLADDR2, BILLCITY, BILLSTATE, BILLZIP, BILLCOUNTRY,
+                           COURIER, TOTALPRICE,
+                           BILLTOFIRSTNAME, BILLTOLASTNAME, SHIPTOFIRSTNAME, SHIPTOLASTNAME,
+                           CREDITCARD, EXPRDATE, CARDTYPE, LOCALE, STATUS)
+        VALUES (#{orderId}, #{username}, #{orderDate},
+                #{shippingAddress1}, #{shippingAddress2}, #{shippingCity}, #{shippingState}, #{shippingZip}, #{shippingCountry},
+                #{billingAddress1}, #{billingAddress2}, #{billingCity}, #{billingState}, #{billingZip}, #{billingCountry},
+                #{courier}, #{totalPrice},
+                #{billToFirstName}, #{billToLastName}, #{shipToFirstName}, #{shipToLastName},
+                #{creditCard}, #{exprDate}, #{cardType}, #{locale}, 'P')
     </insert>
 
     <!-- 插入订单项 -->
@@ -25,10 +32,15 @@
         SELECT ORDERID AS orderId, USERID AS username, ORDERDATE AS orderDate,
                SHIPADDR1 AS shippingAddress1, SHIPADDR2 AS shippingAddress2,
                SHIPCITY AS shippingCity, SHIPSTATE AS shippingState, SHIPZIP AS shippingZip,
-               SHIPCOUNTRY AS shippingCountry, BILLADDR1 AS billingAddress1,
-               BILLADDR2 AS billingAddress2, BILLCITY AS billingCity, BILLSTATE AS billingState,
-               BILLZIP AS billingZip, BILLCOUNTRY AS billingCountry, TOTALPRICE AS totalPrice,
-               PAYMENTTYPE AS paymentType, STATUS AS status
+               SHIPCOUNTRY AS shippingCountry, 
+               BILLADDR1 AS billingAddress1, BILLADDR2 AS billingAddress2,
+               BILLCITY AS billingCity, BILLSTATE AS billingState,
+               BILLZIP AS billingZip, BILLCOUNTRY AS billingCountry, 
+               COURIER AS courier, TOTALPRICE AS totalPrice,
+               BILLTOFIRSTNAME AS billToFirstName, BILLTOLASTNAME AS billToLastName,
+               SHIPTOFIRSTNAME AS shipToFirstName, SHIPTOLASTNAME AS shipToLastName,
+               CREDITCARD AS creditCard, EXPRDATE AS exprDate, 
+               CARDTYPE AS cardType, LOCALE AS locale, STATUS AS status
         FROM ORDERS WHERE USERID = #{username} ORDER BY ORDERDATE DESC
     </select>
 
@@ -37,10 +49,15 @@
         SELECT ORDERID AS orderId, USERID AS username, ORDERDATE AS orderDate,
                SHIPADDR1 AS shippingAddress1, SHIPADDR2 AS shippingAddress2,
                SHIPCITY AS shippingCity, SHIPSTATE AS shippingState, SHIPZIP AS shippingZip,
-               SHIPCOUNTRY AS shippingCountry, BILLADDR1 AS billingAddress1,
-               BILLADDR2 AS billingAddress2, BILLCITY AS billingCity, BILLSTATE AS billingState,
-               BILLZIP AS billingZip, BILLCOUNTRY AS billingCountry, TOTALPRICE AS totalPrice,
-               PAYMENTTYPE AS paymentType, STATUS AS status
+               SHIPCOUNTRY AS shippingCountry,
+               BILLADDR1 AS billingAddress1, BILLADDR2 AS billingAddress2,
+               BILLCITY AS billingCity, BILLSTATE AS billingState,
+               BILLZIP AS billingZip, BILLCOUNTRY AS billingCountry,
+               COURIER AS courier, TOTALPRICE AS totalPrice,
+               BILLTOFIRSTNAME AS billToFirstName, BILLTOLASTNAME AS billToLastName,
+               SHIPTOFIRSTNAME AS shipToFirstName, SHIPTOLASTNAME AS shipToLastName,
+               CREDITCARD AS creditCard, EXPRDATE AS exprDate,
+               CARDTYPE AS cardType, LOCALE AS locale, STATUS AS status
         FROM ORDERS WHERE ORDERID = #{orderId} AND USERID = #{username}
     </select>
 

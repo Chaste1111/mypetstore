@@ -43,11 +43,16 @@ public class AccountController {
      */
     @PostMapping("/login")
     public Result<Account> login(@RequestBody Account account) {
-        Account user = accountService.getAccount(account.getUsername(), account.getPassword());
-        if (user != null) {
-            return Result.success("登录成功", user);
+        try {
+            Account user = accountService.getAccount(account.getUsername(), account.getPassword());
+            if (user != null) {
+                return Result.success("登录成功", user);
+            }
+            return Result.badRequest("用户名或密码错误");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.error("登录失败: " + e.getMessage());
         }
-        return Result.badRequest("用户名或密码错误");
     }
 
     /**

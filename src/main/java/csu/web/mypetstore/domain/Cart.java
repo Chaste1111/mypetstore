@@ -17,7 +17,7 @@ import java.util.Map;
 
 /**
  * 购物车实体类
- * 对应数据库表：CART
+ * 对应数据库表：CART（根据你的建表脚本，只有CARTID字段）
  */
 @Data
 @TableName("CART")
@@ -26,27 +26,27 @@ public class Cart implements Serializable {
     private static final long serialVersionUID = 8329559983943337176L;
 
     /**
-     * 购物车ID，主键
+     * 购物车ID，主键（对应建表脚本中的CARTID）
      */
     @TableId(value = "CARTID", type = IdType.INPUT)
     private String cartId;
 
     /**
-     * 用户ID
+     * 用户ID（业务字段，与cartId相同，不存在于数据库）
      */
-    @TableField("USERID")
+    @TableField(exist = false)
     private String userId;
 
     /**
-     * 创建时间
+     * 创建时间（业务字段，不存在于数据库）
      */
-    @TableField("CREATETIME")
+    @TableField(exist = false)
     private Date createTime;
 
     /**
-     * 更新时间
+     * 更新时间（业务字段，不存在于数据库）
      */
-    @TableField("UPDATETIME")
+    @TableField(exist = false)
     private Date updateTime;
 
     /**

@@ -116,16 +116,71 @@ public class Order {
     private BigDecimal totalPrice;
 
     /**
-     * 支付类型
+     * 快递公司
      */
-    @TableField("PAYMENTTYPE")
-    private String paymentType;
+    @TableField("COURIER")
+    private String courier;
+
+    /**
+     * 账单收件人名字
+     */
+    @TableField("BILLTOFIRSTNAME")
+    private String billToFirstName;
+
+    /**
+     * 账单收件人姓氏
+     */
+    @TableField("BILLTOLASTNAME")
+    private String billToLastName;
+
+    /**
+     * 配送收件人名字
+     */
+    @TableField("SHIPTOFIRSTNAME")
+    private String shipToFirstName;
+
+    /**
+     * 配送收件人姓氏
+     */
+    @TableField("SHIPTOLASTNAME")
+    private String shipToLastName;
+
+    /**
+     * 信用卡号
+     */
+    @TableField("CREDITCARD")
+    private String creditCard;
+
+    /**
+     * 有效期
+     */
+    @TableField("EXPRDATE")
+    private String exprDate;
+
+    /**
+     * 卡类型
+     */
+    @TableField("CARDTYPE")
+    private String cardType;
+
+    /**
+     * 语言环境
+     */
+    @TableField("LOCALE")
+    private String locale;
 
     /**
      * 订单状态
      */
     @TableField("STATUS")
     private String status;
+
+    /**
+     * Deleted: /**
+     * 支付类型
+     * /
+     * @TableField("PAYMENTTYPE")
+     * private String paymentType;
 
     /**
      * 订单关联的商品项（业务字段）

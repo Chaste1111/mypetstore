@@ -13,7 +13,7 @@ import java.io.Serializable;
 
 /**
  * 用户账户实体类
- * 对应数据库表：ACCOUNT, PROFILE, SIGNON（用户账户信息分布在多个表中）
+ * 对应数据库表：ACCOUNT（宽表设计，所有用户信息存储在同一表中）
  */
 @Data
 @NoArgsConstructor
@@ -31,9 +31,9 @@ public class Account implements Serializable {
     private String username;
 
     /**
-     * 密码（存储在 SIGNON 表）
+     * 密码（存储在 ACCOUNT 表）
      */
-    @TableField(exist = false)
+    @TableField("PASSWORD")
     private String password;
 
     /**
@@ -103,28 +103,28 @@ public class Account implements Serializable {
     private String phone;
 
     /**
-     * 收藏的商品分类ID（存储在 PROFILE 表）
+     * 收藏的商品分类ID（存储在 ACCOUNT 表）
      */
-    @TableField(exist = false)
+    @TableField("FAVCATEGORY")
     private String favoriteCategoryId;
 
     /**
-     * 语言偏好（存储在 PROFILE 表）
+     * 语言偏好（存储在 ACCOUNT 表）
      */
-    @TableField(exist = false)
+    @TableField("LANGPREF")
     private String languagePreference;
 
     /**
-     * 是否显示我的列表（存储在 PROFILE 表）
+     * 是否显示我的列表（存储在 ACCOUNT 表）
      */
-    @TableField(exist = false)
-    private boolean listOption;
+    @TableField("MYLISTOPT")
+    private Integer listOption;
 
     /**
-     * 是否显示横幅（存储在 PROFILE 表）
+     * 是否显示横幅（存储在 ACCOUNT 表）
      */
-    @TableField(exist = false)
-    private boolean bannerOption;
+    @TableField("BANNEROPT")
+    private Integer bannerOption;
 
     /**
      * 横幅名称（存储在 BANNERDATA 表）

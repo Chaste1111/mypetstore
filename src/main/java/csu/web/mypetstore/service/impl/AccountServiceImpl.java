@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * 用户账户服务实现类
  * 继承 MyBatis Plus 的 ServiceImpl，自动获得基础 CRUD 方法
+ * 数据库采用宽表设计，所有用户信息存储在 ACCOUNT 表中
  */
 @Service
 public class AccountServiceImpl extends ServiceImpl<AccountDao, Account> implements AccountService {
@@ -45,6 +46,7 @@ public class AccountServiceImpl extends ServiceImpl<AccountDao, Account> impleme
     /**
      * 用户注册
      * 使用 @Transactional 保证事务一致性
+     * 宽表设计：所有信息都在ACCOUNT表中
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -59,21 +61,19 @@ public class AccountServiceImpl extends ServiceImpl<AccountDao, Account> impleme
             throw new RuntimeException("用户名已存在");
         }
         
-        // 2. 插入账户信息（三个表：ACCOUNT, PROFILE, SIGNON）
+        // 2. 插入账户信息（宽表设计，只有ACCOUNT表）
         accountDao.insertAccount(account);
-        accountDao.insertProfile(account);
-        accountDao.insertSignon(account);
     }
 
     /**
      * 更新用户信息（不含密码）
      * 使用 @Transactional 保证事务一致性
+     * 宽表设计：只有ACCOUNT表
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void updateAccountInfo(Account account) {
         accountDao.updateAccount(account);
-        accountDao.updateProfile(account);
     }
 
     /**

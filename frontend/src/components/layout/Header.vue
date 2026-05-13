@@ -60,7 +60,7 @@
             <el-dropdown @command="handleCommand">
               <span class="user-info">
                 <el-icon><User /></el-icon>
-                <span>{{ userStore.user?.firstName || userStore.user?.username }}</span>
+                <span>{{ userStore.user?.firstName }}{{ userStore.user?.lastName }} ({{ userStore.user?.username }})</span>
               </span>
               <template #dropdown>
                 <el-dropdown-menu>
