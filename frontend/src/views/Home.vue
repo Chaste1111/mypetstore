@@ -21,7 +21,11 @@
               class="category-card"
               @click="goToCategory(category.categoryId)"
             >
-              <div class="category-icon">🐾</div>
+              <img 
+                :src="getCategoryIcon(category.categoryId)" 
+                :alt="category.name"
+                class="category-icon-img"
+              />
               <h3>{{ category.name }}</h3>
               <p>{{ category.description }}</p>
             </div>
@@ -41,7 +45,11 @@
               @click="goToProduct(product.productId)"
             >
               <div class="product-image">
-                <div class="placeholder-img">🐶</div>
+                <img 
+                  :src="getProductImage(product.productId)" 
+                  :alt="product.name"
+                  @error="handleImageError"
+                />
               </div>
               <div class="product-info">
                 <h3>{{ product.name }}</h3>
@@ -58,6 +66,7 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useCatalogStore } from '@/stores/catalog'
+import { getProductImage, getCategoryIcon } from '@/utils/image'
 
 const router = useRouter()
 const catalogStore = useCatalogStore()
@@ -78,6 +87,10 @@ const goToCategory = (categoryId) => {
 
 const goToProduct = (productId) => {
   router.push(`/product/${productId}`)
+}
+
+const handleImageError = (e) => {
+  e.target.src = '/images/splash.gif'
 }
 </script>
 
@@ -135,9 +148,11 @@ const goToProduct = (productId) => {
   box-shadow: var(--shadow-lg);
 }
 
-.category-icon {
-  font-size: 48px;
+.category-icon-img {
+  width: 60px;
+  height: 60px;
   margin-bottom: var(--spacing-md);
+  object-fit: contain;
 }
 
 .category-card h3 {
@@ -189,10 +204,18 @@ const goToProduct = (productId) => {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-.placeholder-img {
-  font-size: 80px;
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
 }
 
 .product-info {
