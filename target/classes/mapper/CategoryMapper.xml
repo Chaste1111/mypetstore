@@ -4,12 +4,12 @@
 
     <!-- 获取所有分类列表 -->
     <select id="getCategoryList" resultType="csu.web.mypetstore.domain.Category">
-        SELECT CATEGORYID AS categoryId, NAME AS name, DESC AS description FROM CATEGORY
+        SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
     </select>
 
     <!-- 根据分类ID查询分类详情 -->
     <select id="getCategory" resultType="csu.web.mypetstore.domain.Category">
-        SELECT CATEGORYID AS categoryId, NAME AS name, DESC AS description FROM CATEGORY WHERE CATEGORYID = #{categoryId}
+        SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY WHERE CATEGORYID = #{categoryId}
     </select>
 
 </mapper>

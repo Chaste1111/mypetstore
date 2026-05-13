@@ -4,7 +4,6 @@
       <div class="header-content">
         <!-- Logo -->
         <router-link to="/" class="logo">
-          <img src="/src/assets/images/logo.png" alt="MyPetStore" v-if="false" />
           <span class="logo-text">🐾 MyPetStore</span>
         </router-link>
 
