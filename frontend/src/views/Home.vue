@@ -1,6 +1,5 @@
 <template>
-  <Layout>
-    <div class="home">
+  <div class="home">
       <!-- Banner区域 -->
       <section class="banner">
         <div class="container">
@@ -52,14 +51,12 @@
           </div>
         </div>
       </section>
-    </div>
-  </Layout>
+  </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import Layout from '@/components/layout/Layout.vue'
 import { useCatalogStore } from '@/stores/catalog'
 
 const router = useRouter()

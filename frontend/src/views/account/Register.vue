@@ -1,14 +1,11 @@
 <template>
-  <Layout>
-    <div class="page-container">
-      <h2>注册</h2>
-      <p>注册页面开发中...</p>
-    </div>
-  </Layout>
+  <div class="page-container">
+    <h2>注册</h2>
+    <p>注册页面开发中...</p>
+  </div>
 </template>
 
 <script setup>
-import Layout from '@/components/layout/Layout.vue'
 </script>
 
 <style scoped>

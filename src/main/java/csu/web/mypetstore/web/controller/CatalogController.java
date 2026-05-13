@@ -28,8 +28,13 @@ public class CatalogController {
      */
     @GetMapping("/products")
     public Result<List<Product>> getAllProducts() {
-        List<Product> products = catalogService.list();
-        return Result.success(products);
+        try {
+            List<Product> products = catalogService.list();
+            return Result.success(products);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.error("获取产品列表失败: " + e.getMessage());
+        }
     }
 
     /**
@@ -40,8 +45,13 @@ public class CatalogController {
      */
     @GetMapping("/categories")
     public Result<List<Category>> getAllCategories() {
-        List<Category> categories = catalogService.getCategoryList();
-        return Result.success(categories);
+        try {
+            List<Category> categories = catalogService.getCategoryList();
+            return Result.success(categories);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.error("获取分类列表失败: " + e.getMessage());
+        }
     }
 
     /**
@@ -53,7 +63,12 @@ public class CatalogController {
      */
     @GetMapping("/categories/{categoryId}/products")
     public Result<List<Product>> getProductsByCategory(@PathVariable String categoryId) {
-        List<Product> products = catalogService.getProductListByCategory(categoryId);
-        return Result.success(products);
+        try {
+            List<Product> products = catalogService.getProductListByCategory(categoryId);
+            return Result.success(products);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.error("获取分类产品失败: " + e.getMessage());
+        }
     }
 }

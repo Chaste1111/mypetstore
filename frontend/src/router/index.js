@@ -79,6 +79,12 @@ const routes = [
     name: 'ChangePassword',
     component: () => import('@/views/account/ChangePassword.vue'),
     meta: { title: '修改密码', requiresAuth: true }
+  },
+  {
+    path: '/help',
+    name: 'Help',
+    component: () => import('@/views/Help.vue'),
+    meta: { title: '帮助中心' }
   }
 ]
 

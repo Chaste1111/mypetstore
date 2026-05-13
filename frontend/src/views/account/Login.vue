@@ -1,14 +1,11 @@
 <template>
-  <Layout>
-    <div class="page-container">
-      <h2>登录</h2>
-      <p>登录页面开发中...</p>
-    </div>
-  </Layout>
+  <div class="page-container">
+    <h2>登录</h2>
+    <p>登录页面开发中...</p>
+  </div>
 </template>
 
 <script setup>
-import Layout from '@/components/layout/Layout.vue'
 </script>
 
 <style scoped>
