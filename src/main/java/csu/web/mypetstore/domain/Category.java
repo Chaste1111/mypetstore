@@ -33,6 +33,6 @@ public class Category implements Serializable {
     /**
      * 分类描述
      */
-    @TableField("DESC")
+    @TableField("`DESC`")
     private String description;
 }

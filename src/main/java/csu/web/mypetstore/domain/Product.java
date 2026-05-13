@@ -39,6 +39,6 @@ public class Product implements Serializable {
     /**
      * 产品描述
      */
-    @TableField("DESC")
+    @TableField("`DESC`")
     private String description;
 }
