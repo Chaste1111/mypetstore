@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="csu.web.mypetstore.persistence.ProductDao">
+
+    <!-- 根据分类ID获取产品列表 -->
+    <select id="getProductListByCategory" resultType="csu.web.mypetstore.domain.Product">
+        SELECT PRODUCTID AS productId, CATEGORY AS categoryId, NAME AS name, DESC AS description
+        FROM PRODUCT WHERE CATEGORY = #{categoryId}
+    </select>
+
+    <!-- 根据关键字搜索产品 -->
+    <select id="searchProductList" resultType="csu.web.mypetstore.domain.Product">
+        SELECT PRODUCTID AS productId, CATEGORY AS categoryId, NAME AS name, DESC AS description
+        FROM PRODUCT WHERE NAME LIKE CONCAT('%', #{keyword}, '%')
+    </select>
+
+    <!-- 根据产品ID查询产品详情 -->
+    <select id="getProduct" resultType="csu.web.mypetstore.domain.Product">
+        SELECT PRODUCTID AS productId, CATEGORY AS categoryId, NAME AS name, DESC AS description
+        FROM PRODUCT WHERE PRODUCTID = #{productId}
+    </select>
+
+</mapper>
