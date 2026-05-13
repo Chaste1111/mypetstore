@@ -147,8 +147,12 @@ const addToCart = async (itemId) => {
   }
 
   try {
-    await cartStore.addItemToCart(userStore.user.username, itemId)
-    ElMessage.success('已添加到购物车')
+    const result = await cartStore.addItem(userStore.user.username, itemId)
+    if (result.success) {
+      ElMessage.success('已添加到购物车')
+    } else {
+      ElMessage.error(result.message || '添加到购物车失败')
+    }
   } catch (error) {
     console.error('添加到购物车失败:', error)
     ElMessage.error('添加到购物车失败')
