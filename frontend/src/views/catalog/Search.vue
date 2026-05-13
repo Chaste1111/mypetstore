@@ -21,7 +21,7 @@
         >
           <div class="product-image">
             <img 
-              :src="getProductImage(product.productId)" 
+              :src="getProductImage(product.productId, product.name)" 
               :alt="product.name"
               @error="handleImageError"
             />
