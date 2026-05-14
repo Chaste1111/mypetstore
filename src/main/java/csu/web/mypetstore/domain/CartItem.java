@@ -60,6 +60,10 @@ public class CartItem implements Serializable {
      */
     public void setItem(Item item) {
         this.item = item;
+        // 同步设置itemId
+        if (item != null) {
+            this.itemId = item.getItemId();
+        }
         this.calculateTotal();
     }
 

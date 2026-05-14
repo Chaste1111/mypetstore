@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { catalogApi } from '@/api/catalog'
 import { getProductImage } from '@/utils/image'
@@ -82,6 +82,16 @@ const fetchCategoryData = async () => {
     loading.value = false
   }
 }
+
+// 监听路由参数变化
+watch(
+  () => route.params.categoryId,
+  (newCategoryId, oldCategoryId) => {
+    if (newCategoryId !== oldCategoryId) {
+      fetchCategoryData()
+    }
+  }
+)
 
 // 跳转到产品详情
 const goToProduct = (productId) => {

@@ -4,7 +4,7 @@
       <!-- 页面标题 -->
       <div class="page-header">
         <h1>🛒 购物车</h1>
-        <p v-if="cartStore.cart.cartItems && cartStore.cart.cartItems.length > 0">
+        <p v-if="cartStore.cart.items && cartStore.cart.items.length > 0">
           共 {{ cartStore.itemCount }} 件商品
         </p>
       </div>
@@ -148,7 +148,7 @@ const selectedItems = ref([])
 
 // 计算属性：购物车商品列表
 const cartItems = computed(() => {
-  return cartStore.cart?.cartItems || []
+  return cartStore.cart?.items || []
 })
 
 // 页面加载时获取购物车数据

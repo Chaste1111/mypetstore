@@ -272,7 +272,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { useUserStore } from '@/stores/user'
@@ -302,6 +302,16 @@ onMounted(async () => {
 
   await fetchOrderDetail(orderId)
 })
+
+// 监听路由参数变化
+watch(
+  () => route.params.orderId,
+  (newOrderId, oldOrderId) => {
+    if (newOrderId !== oldOrderId) {
+      fetchOrderDetail(newOrderId)
+    }
+  }
+)
 
 // 获取订单详情
 const fetchOrderDetail = async (orderId) => {

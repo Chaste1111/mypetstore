@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * 订单服务实现类
@@ -28,6 +30,21 @@ public class OrderServiceImpl extends ServiceImpl<OrderDao, Order> implements Or
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void placeOrder(Order order) {
+        // 生成订单ID
+        if (order.getOrderId() == null || order.getOrderId().isEmpty()) {
+            order.setOrderId(UUID.randomUUID().toString().replace("-", "").substring(0, 20));
+        }
+        
+        // 设置订单日期（如果未设置）
+        if (order.getOrderDate() == null) {
+            order.setOrderDate(new Date());
+        }
+        
+        // 设置默认状态为待支付
+        if (order.getStatus() == null || order.getStatus().isEmpty()) {
+            order.setStatus("P");
+        }
+        
         // 插入订单主表
         orderDao.insertOrder(order);
         // 插入订单项

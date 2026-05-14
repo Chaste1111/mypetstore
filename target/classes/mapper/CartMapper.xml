@@ -10,9 +10,15 @@
 
     <!-- 根据用户ID获取购物车 -->
     <select id="getCartByUserId" resultType="csu.web.mypetstore.domain.Cart">
-        SELECT CARTID AS cartId, USERID AS userId, CREATETIME AS createTime, UPDATETIME AS updateTime
-        FROM CART WHERE USERID = #{userId}
+        SELECT CARTID AS cartId
+        FROM CART WHERE CARTID = #{userId}
     </select>
+
+    <!-- 更新购物车（由于CART表只有CARTID字段，这里不需要实际更新） -->
+    <update id="updateCart">
+        -- CART表只有CARTID字段，无需更新
+        SELECT 1
+    </update>
 
     <!-- 添加购物车项 -->
     <insert id="addCartItem">
@@ -30,10 +36,14 @@
         DELETE FROM CARTITEM WHERE CARTID = #{cartId} AND ITEMID = #{itemId}
     </delete>
 
-    <!-- 获取购物车所有项 -->
+    <!-- 获取购物车所有项（需要关联查询Item信息） -->
     <select id="getCartItems" resultType="csu.web.mypetstore.domain.CartItem">
-        SELECT CARTID AS cartId, ITEMID AS itemId, QUANTITY AS quantity
-        FROM CARTITEM WHERE CARTID = #{cartId}
+        SELECT 
+            ci.CARTID AS cartId, 
+            ci.ITEMID AS itemId, 
+            ci.QUANTITY AS quantity
+        FROM CARTITEM ci 
+        WHERE ci.CARTID = #{cartId}
     </select>
 
     <!-- 清空购物车 -->

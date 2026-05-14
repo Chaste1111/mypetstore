@@ -84,7 +84,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { ArrowLeft } from '@element-plus/icons-vue'
@@ -127,6 +127,16 @@ const fetchProductDetail = async () => {
     loading.value = false
   }
 }
+
+// 监听路由参数变化
+watch(
+  () => route.params.productId,
+  (newProductId, oldProductId) => {
+    if (newProductId !== oldProductId) {
+      fetchProductDetail()
+    }
+  }
+)
 
 // 返回上一页
 const goBack = () => {

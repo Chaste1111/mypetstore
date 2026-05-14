@@ -68,6 +68,14 @@ public class Cart implements Serializable {
     private List<CartItem> cartItems = new ArrayList<>();
 
     /**
+     * 获取购物车商品项列表（用于JSON序列化）
+     * @return 购物车商品项列表
+     */
+    public List<CartItem> getItems() {
+        return this.itemList;
+    }
+
+    /**
      * 从列表加载商品项
      */
     public void loadItemsFromList(List<CartItem> items) {

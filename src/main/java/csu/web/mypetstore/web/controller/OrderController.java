@@ -78,11 +78,42 @@ public class OrderController {
     public Result<String> updateOrderStatus(@PathVariable String orderId, @RequestParam String status) {
         Order order = orderService.getById(orderId);
         if (order != null) {
-            order.setStatus(status);
+            // 将中文状态转换为数据库状态码
+            String dbStatus = convertToDbStatus(status);
+            order.setStatus(dbStatus);
             orderService.updateById(order);
             return Result.success("订单状态更新成功");
         }
         return Result.error(404, "订单不存在");
+    }
+
+    /**
+     * 将中文状态转换为数据库状态码
+     */
+    private String convertToDbStatus(String status) {
+        if (status == null) {
+            return "P";
+        }
+        switch (status) {
+            case "待支付":
+            case "P":
+                return "P";  // Pending
+            case "已支付":
+                return "P";  // 暂时也用P，或者可以扩展为"PA"
+            case "配送中":
+                return "S";  // Shipped
+            case "已完成":
+                return "C";  // Completed
+            case "已取消":
+                return "X";  // Cancelled
+            default:
+                // 如果已经是短状态码且长度<=2，直接返回
+                if (status.length() <= 2) {
+                    return status;
+                }
+                // 否则默认为待支付
+                return "P";
+        }
     }
 
     /**

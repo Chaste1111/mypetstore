@@ -26,6 +26,15 @@ public class GlobalExceptionHandler {
     }
 
     /**
+     * 处理非法参数异常（如商品不存在）
+     */
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Result<Void>> handleIllegalArgumentException(IllegalArgumentException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(Result.error(e.getMessage()));
+    }
+
+    /**
      * 处理运行时异常
      */
     @ExceptionHandler(RuntimeException.class)

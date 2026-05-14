@@ -6,14 +6,13 @@ import csu.web.mypetstore.domain.Item;
 import csu.web.mypetstore.persistence.CartDao;
 import csu.web.mypetstore.service.CartService;
 import csu.web.mypetstore.service.CatalogService;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
-import java.util.UUID;
+import java.util.List;
 
 /**
  * 购物车服务实现类
@@ -30,24 +29,35 @@ public class CartServiceImpl extends ServiceImpl<CartDao, Cart> implements CartS
 
     /**
      * 获取用户购物车（不存在则创建）
-     * 使用 LambdaQueryWrapper 查询用户购物车
+     * 使用自定义SQL查询用户购物车
      */
     @Override
     public Cart getCartByUserId(String userId) {
-        // 使用 LambdaQueryWrapper 构建查询条件
-        Cart cart = baseMapper.selectOne(
-            new LambdaQueryWrapper<Cart>()
-                .eq(Cart::getUserId, userId)
-        );
+        // 使用自定义DAO方法查询用户购物车
+        Cart cart = cartDao.getCartByUserId(userId);
         
         if (cart == null) {
             // 创建新购物车
             cart = new Cart();
-            cart.setCartId(UUID.randomUUID().toString().replace("-", "").substring(0, 20));
+            cart.setCartId(userId);  // 使用userId作为cartId
             cart.setUserId(userId);
             cart.setCreateTime(new Date());
             cart.setUpdateTime(new Date());
             cartDao.createCart(cart);
+        } else {
+            // 设置userId
+            cart.setUserId(userId);
+            // 加载购物车项
+            List<CartItem> items = cartDao.getCartItems(cart.getCartId());
+            // 为每个CartItem加载Item信息
+            for (CartItem item : items) {
+                Item productItem = catalogService.getItem(item.getItemId());
+                item.setItem(productItem);
+                // 检查库存
+                boolean inStock = catalogService.isItemInStock(item.getItemId());
+                item.setInStock(inStock);
+            }
+            cart.loadItemsFromList(items);
         }
         return cart;
     }
@@ -72,8 +82,14 @@ public class CartServiceImpl extends ServiceImpl<CartDao, Cart> implements CartS
                 .ifPresent(CartItem::incrementQuantity);
         } else {
             // 添加新商品
-            boolean isInStock = catalogService.isItemInStock(itemId);
             Item item = catalogService.getItem(itemId);
+            
+            // 检查商品是否存在
+            if (item == null) {
+                throw new IllegalArgumentException("商品不存在: " + itemId);
+            }
+            
+            boolean isInStock = catalogService.isItemInStock(itemId);
             
             CartItem cartItem = new CartItem();
             cartItem.setCartId(cart.getCartId());

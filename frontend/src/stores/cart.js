@@ -11,6 +11,9 @@ export const useCartStore = defineStore('cart', () => {
 
   // 计算属性：购物车商品总数
   const itemCount = computed(() => {
+    if (!cart.value || !cart.value.items) {
+      return 0
+    }
     return cart.value.items.reduce((sum, item) => sum + item.quantity, 0)
   })
 
