@@ -27,7 +27,7 @@
         </foreach>
     </insert>
 
-    <!-- 根据用户名查询订单列表 -->
+    <!-- 根据用户名查询订单列表（排除已取消的订单） -->
     <select id="getOrdersByUsername" resultType="csu.web.mypetstore.domain.Order">
         SELECT ORDERID AS orderId, USERID AS username, ORDERDATE AS orderDate,
                SHIPADDR1 AS shippingAddress1, SHIPADDR2 AS shippingAddress2,
@@ -41,7 +41,7 @@
                SHIPTOFIRSTNAME AS shipToFirstName, SHIPTOLASTNAME AS shipToLastName,
                CREDITCARD AS creditCard, EXPRDATE AS exprDate, 
                CARDTYPE AS cardType, LOCALE AS locale, STATUS AS status
-        FROM ORDERS WHERE USERID = #{username} ORDER BY ORDERDATE DESC
+        FROM ORDERS WHERE USERID = #{username} AND STATUS != 'X' ORDER BY ORDERDATE DESC
     </select>
 
     <!-- 根据订单ID和用户名查询单个订单 -->
@@ -60,5 +60,10 @@
                CARDTYPE AS cardType, LOCALE AS locale, STATUS AS status
         FROM ORDERS WHERE ORDERID = #{orderId} AND USERID = #{username}
     </select>
+
+    <!-- 根据订单ID删除订单项 -->
+    <delete id="deleteLineItemsByOrderId">
+        DELETE FROM LINEITEM WHERE ORDERID = #{orderId}
+    </delete>
 
 </mapper>

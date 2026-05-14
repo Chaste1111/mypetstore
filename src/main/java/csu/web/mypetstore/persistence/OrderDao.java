@@ -32,4 +32,9 @@ public interface OrderDao extends BaseMapper<Order> {
      * 根据订单ID和用户名查询单个订单（加用户名防止越权）
      */
     Order getOrderById(String orderId, String username);
+
+    /**
+     * 根据订单ID删除订单项
+     */
+    void deleteLineItemsByOrderId(String orderId);
 }

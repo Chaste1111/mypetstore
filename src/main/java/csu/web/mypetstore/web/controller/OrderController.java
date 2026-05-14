@@ -2,6 +2,7 @@ package csu.web.mypetstore.web.controller;
 
 import csu.web.mypetstore.common.Result;
 import csu.web.mypetstore.domain.Order;
+import csu.web.mypetstore.persistence.OrderDao;
 import csu.web.mypetstore.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,9 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @Autowired
+    private OrderDao orderDao;
+
     /**
      * 创建订单
      * POST /api/orders
@@ -32,6 +36,7 @@ public class OrderController {
             orderService.placeOrder(order);
             return Result.success("订单创建成功", order);
         } catch (Exception e) {
+            e.printStackTrace();
             return Result.error("订单创建失败：" + e.getMessage());
         }
     }
@@ -117,18 +122,26 @@ public class OrderController {
     }
 
     /**
-     * 删除订单
+     * 取消订单（将订单状态更新为已取消）
      * DELETE /api/orders/{orderId}
      *
      * @param orderId 订单ID
-     * @return 删除结果
+     * @return 取消结果
      */
     @DeleteMapping("/{orderId}")
     public Result<String> deleteOrder(@PathVariable String orderId) {
-        boolean success = orderService.removeById(orderId);
-        if (success) {
-            return Result.success("订单删除成功");
+        try {
+            Order order = orderService.getById(orderId);
+            if (order != null) {
+                // 将订单状态更新为已取消（X）
+                order.setStatus("X");
+                orderService.updateById(order);
+                return Result.success("订单已取消");
+            }
+            return Result.error(404, "订单不存在");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.error("订单取消失败：" + e.getMessage());
         }
-        return Result.error(404, "订单不存在");
     }
 }

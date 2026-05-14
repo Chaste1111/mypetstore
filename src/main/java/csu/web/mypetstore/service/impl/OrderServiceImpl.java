@@ -30,6 +30,11 @@ public class OrderServiceImpl extends ServiceImpl<OrderDao, Order> implements Or
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void placeOrder(Order order) {
+        // 验证并设置用户名（必需字段）
+        if (order.getUsername() == null || order.getUsername().isEmpty()) {
+            throw new IllegalArgumentException("用户ID不能为空");
+        }
+        
         // 生成订单ID
         if (order.getOrderId() == null || order.getOrderId().isEmpty()) {
             order.setOrderId(UUID.randomUUID().toString().replace("-", "").substring(0, 20));
@@ -44,6 +49,8 @@ public class OrderServiceImpl extends ServiceImpl<OrderDao, Order> implements Or
         if (order.getStatus() == null || order.getStatus().isEmpty()) {
             order.setStatus("P");
         }
+        
+        System.out.println("DEBUG OrderServiceImpl: Inserting order with username=" + order.getUsername() + ", orderId=" + order.getOrderId());
         
         // 插入订单主表
         orderDao.insertOrder(order);
