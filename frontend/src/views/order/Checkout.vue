@@ -159,7 +159,7 @@
                         />
                       </div>
                       <div class="item-details">
-                        <h4>{{ item.item?.productId || item.itemId }}</h4>
+                        <h4>{{ item.item?.productId || item.itemId }} {{ item.item?.product?.name || '' }}</h4>
                         <p>{{ item.item?.attribute1 }} {{ item.item?.attribute2 }}</p>
                         <p class="quantity">x{{ item.quantity }}</p>
                       </div>
@@ -230,6 +230,7 @@ import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { useUserStore } from '@/stores/user'
 import { orderApi } from '@/api/order'
+import { getProductImage } from '@/utils/image'
 
 const router = useRouter()
 const userStore = useUserStore()
@@ -493,18 +494,6 @@ const handleSubmitOrder = async () => {
   } finally {
     submitting.value = false
   }
-}
-
-// 获取商品图片
-const getProductImage = (productId) => {
-  const imageMap = {
-    'fish': '/images/fish.gif',
-    'dogs': '/images/dogs.gif',
-    'cats': '/images/cats.gif',
-    'birds': '/images/birds_icon.gif',
-    'reptiles': '/images/reptiles_icon.gif'
-  }
-  return imageMap[productId] || '/images/splash.gif'
 }
 
 // 图片加载错误处理

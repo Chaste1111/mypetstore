@@ -89,7 +89,7 @@
 
                 <el-table-column label="商品信息" min-width="250">
                   <template #default="{ row }">
-                    <div class="product-name">{{ row.item?.productId || row.itemId }}</div>
+                    <div class="product-name">{{ row.item?.productId || row.itemId }} {{ row.item?.product?.name || '' }}</div>
                     <div class="product-attr">{{ row.item?.attribute1 }} {{ row.item?.attribute2 }}</div>
                   </template>
                 </el-table-column>
@@ -181,7 +181,7 @@
                   :key="index"
                   class="price-row item-detail"
                 >
-                  <span class="item-name">{{ item.item?.productId || item.itemId }}</span>
+                  <span class="item-name">{{ item.item?.productId || item.itemId }} {{ item.item?.product?.name || '' }}</span>
                   <span>x{{ item.quantity }}</span>
                 </div>
 
@@ -278,6 +278,7 @@ import { ElMessage, ElMessageBox } from 'element-plus'
 import { useUserStore } from '@/stores/user'
 import { useCartStore } from '@/stores/cart'
 import { orderApi } from '@/api/order'
+import { getProductImage } from '@/utils/image'
 
 const route = useRoute()
 const router = useRouter()
@@ -405,18 +406,6 @@ const getSubtotal = () => {
 const maskCreditCard = (cardNumber) => {
   if (!cardNumber) return ''
   return cardNumber.slice(-4)
-}
-
-// 获取商品图片
-const getProductImage = (productId) => {
-  const imageMap = {
-    'fish': '/images/fish.gif',
-    'dogs': '/images/dogs.gif',
-    'cats': '/images/cats.gif',
-    'birds': '/images/birds_icon.gif',
-    'reptiles': '/images/reptiles_icon.gif'
-  }
-  return imageMap[productId] || '/images/splash.gif'
 }
 
 // 图片加载错误处理

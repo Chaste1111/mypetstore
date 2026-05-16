@@ -35,7 +35,7 @@
                     />
                   </div>
                   <div class="product-details">
-                    <h3>{{ row.item?.productId || row.itemId }}</h3>
+                    <h3>{{ row.item?.productId || row.itemId }} {{ row.item?.product?.name || '' }}</h3>
                     <p class="product-attr">{{ row.item?.attribute1 }} {{ row.item?.attribute2 }}</p>
                   </div>
                 </div>
@@ -138,6 +138,7 @@ import { useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { useUserStore } from '@/stores/user'
 import { useCartStore } from '@/stores/cart'
+import { getProductImage } from '@/utils/image'
 
 const router = useRouter()
 const userStore = useUserStore()
@@ -274,18 +275,6 @@ const goToCheckout = () => {
   // 将选中的商品存储到sessionStorage，供结算页使用
   sessionStorage.setItem('checkoutItems', JSON.stringify(selectedItems.value))
   router.push('/checkout')
-}
-
-// 获取商品图片
-const getProductImage = (productId) => {
-  const imageMap = {
-    'fish': '/images/fish.gif',
-    'dogs': '/images/dogs.gif',
-    'cats': '/images/cats.gif',
-    'birds': '/images/birds_icon.gif',
-    'reptiles': '/images/reptiles_icon.gif'
-  }
-  return imageMap[productId] || '/images/splash.gif'
 }
 
 // 图片加载错误处理

@@ -63,9 +63,20 @@
 
     <!-- 根据订单ID查询订单项列表 -->
     <select id="getLineItemsByOrderId" resultType="csu.web.mypetstore.domain.LineItem">
-        SELECT ORDERID AS orderId, LINENUM AS lineNumber, ITEMID AS itemId, 
-               QUANTITY AS quantity, UNITPRICE AS unitPrice
-        FROM LINEITEM WHERE ORDERID = #{orderId} ORDER BY LINENUM
+        SELECT l.ORDERID AS orderId, l.LINENUM AS lineNumber, l.ITEMID AS itemId, 
+               l.QUANTITY AS quantity, l.UNITPRICE AS unitPrice,
+               i.PRODUCTID AS "item.productId",
+               i.LISTPRICE AS "item.listPrice",
+               i.ATTR1 AS "item.attribute1",
+               i.ATTR2 AS "item.attribute2",
+               i.ATTR3 AS "item.attribute3",
+               i.ATTR4 AS "item.attribute4",
+               i.ATTR5 AS "item.attribute5",
+               p.NAME AS "item.product.name"
+        FROM LINEITEM l
+        LEFT JOIN ITEM i ON l.ITEMID = i.ITEMID
+        LEFT JOIN PRODUCT p ON i.PRODUCTID = p.PRODUCTID
+        WHERE l.ORDERID = #{orderId} ORDER BY l.LINENUM
     </select>
 
     <!-- 根据订单ID删除订单项 -->

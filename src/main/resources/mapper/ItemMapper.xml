@@ -14,33 +14,42 @@
 
     <!-- 根据产品ID获取商品列表 -->
     <select id="getItemListByProduct" resultType="csu.web.mypetstore.domain.Item">
-        SELECT ITEMID AS itemId, PRODUCTID AS productId, LISTPRICE AS listPrice,
-               UNITCOST AS unitCost, SUPPLIER AS supplierId, STATUS AS status,
-               ATTR1 AS attribute1, ATTR2 AS attribute2, ATTR3 AS attribute3,
-               ATTR4 AS attribute4, ATTR5 AS attribute5
-        FROM ITEM WHERE PRODUCTID = #{productId}
+        SELECT i.ITEMID AS itemId, i.PRODUCTID AS productId, i.LISTPRICE AS listPrice,
+               i.UNITCOST AS unitCost, i.SUPPLIER AS supplierId, i.STATUS AS status,
+               i.ATTR1 AS attribute1, i.ATTR2 AS attribute2, i.ATTR3 AS attribute3,
+               i.ATTR4 AS attribute4, i.ATTR5 AS attribute5,
+               p.NAME AS "product.name"
+        FROM ITEM i
+        LEFT JOIN PRODUCT p ON i.PRODUCTID = p.PRODUCTID
+        WHERE i.PRODUCTID = #{productId}
     </select>
 
     <!-- 根据商品ID查询商品详情 -->
     <select id="getItem" resultType="csu.web.mypetstore.domain.Item">
-        SELECT ITEMID AS itemId, PRODUCTID AS productId, LISTPRICE AS listPrice,
-               UNITCOST AS unitCost, SUPPLIER AS supplierId, STATUS AS status,
-               ATTR1 AS attribute1, ATTR2 AS attribute2, ATTR3 AS attribute3,
-               ATTR4 AS attribute4, ATTR5 AS attribute5
-        FROM ITEM WHERE ITEMID = #{itemId}
+        SELECT i.ITEMID AS itemId, i.PRODUCTID AS productId, i.LISTPRICE AS listPrice,
+               i.UNITCOST AS unitCost, i.SUPPLIER AS supplierId, i.STATUS AS status,
+               i.ATTR1 AS attribute1, i.ATTR2 AS attribute2, i.ATTR3 AS attribute3,
+               i.ATTR4 AS attribute4, i.ATTR5 AS attribute5,
+               p.NAME AS "product.name"
+        FROM ITEM i
+        LEFT JOIN PRODUCT p ON i.PRODUCTID = p.PRODUCTID
+        WHERE i.ITEMID = #{itemId}
     </select>
 
     <!-- 根据关键字搜索商品 -->
     <select id="searchItems" resultType="csu.web.mypetstore.domain.Item">
-        SELECT ITEMID AS itemId, PRODUCTID AS productId, LISTPRICE AS listPrice,
-               UNITCOST AS unitCost, SUPPLIER AS supplierId, STATUS AS status,
-               ATTR1 AS attribute1, ATTR2 AS attribute2, ATTR3 AS attribute3,
-               ATTR4 AS attribute4, ATTR5 AS attribute5
-        FROM ITEM WHERE ATTR1 LIKE CONCAT('%', #{keyword}, '%')
-           OR ATTR2 LIKE CONCAT('%', #{keyword}, '%')
-           OR ATTR3 LIKE CONCAT('%', #{keyword}, '%')
-           OR ATTR4 LIKE CONCAT('%', #{keyword}, '%')
-           OR ATTR5 LIKE CONCAT('%', #{keyword}, '%')
+        SELECT i.ITEMID AS itemId, i.PRODUCTID AS productId, i.LISTPRICE AS listPrice,
+               i.UNITCOST AS unitCost, i.SUPPLIER AS supplierId, i.STATUS AS status,
+               i.ATTR1 AS attribute1, i.ATTR2 AS attribute2, i.ATTR3 AS attribute3,
+               i.ATTR4 AS attribute4, i.ATTR5 AS attribute5,
+               p.NAME AS "product.name"
+        FROM ITEM i
+        LEFT JOIN PRODUCT p ON i.PRODUCTID = p.PRODUCTID
+        WHERE i.ATTR1 LIKE CONCAT('%', #{keyword}, '%')
+           OR i.ATTR2 LIKE CONCAT('%', #{keyword}, '%')
+           OR i.ATTR3 LIKE CONCAT('%', #{keyword}, '%')
+           OR i.ATTR4 LIKE CONCAT('%', #{keyword}, '%')
+           OR i.ATTR5 LIKE CONCAT('%', #{keyword}, '%')
     </select>
 
 </mapper>
