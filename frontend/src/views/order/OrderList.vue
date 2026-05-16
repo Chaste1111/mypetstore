@@ -26,10 +26,8 @@
               >
                 <el-option label="全部状态" value="" />
                 <el-option label="待支付" value="P" />
-                <el-option label="已支付" value="已支付" />
-                <el-option label="配送中" value="配送中" />
-                <el-option label="已完成" value="已完成" />
-                <el-option label="已取消" value="已取消" />
+                <el-option label="配送中" value="S" />
+                <el-option label="已完成" value="C" />
               </el-select>
             </el-col>
 
@@ -253,9 +251,26 @@ const fetchOrders = async () => {
 const filteredOrders = computed(() => {
   let result = [...orders.value]
 
-  // 按状态筛选
+  // 按状态筛选（支持数据库状态码和中文状态的双重匹配）
   if (filters.value.status) {
-    result = result.filter(order => order.status === filters.value.status)
+    const filterStatus = filters.value.status
+    result = result.filter(order => {
+      // 如果筛选值是数据库状态码（P/S/C/X），直接匹配
+      if (order.status === filterStatus) {
+        return true
+      }
+      // 如果筛选值是中文，转换为对应的数据库状态码再匹配
+      const statusMap = {
+        'P': 'P',
+        '待支付': 'P',
+        'S': 'S',
+        '配送中': 'S',
+        '已支付': 'S',
+        'C': 'C',
+        '已完成': 'C'
+      }
+      return order.status === statusMap[filterStatus]
+    })
   }
 
   // 按日期范围筛选
