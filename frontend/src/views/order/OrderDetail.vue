@@ -10,7 +10,7 @@
       <template v-if="!loading && order">
         <!-- 页面标题和返回按钮 -->
         <div class="page-header">
-          <el-button @click="$router.back()" type="primary" plain>
+          <el-button @click="goBackToOrders" type="primary" plain>
             ← 返回订单列表
           </el-button>
           <h1>📋 订单详情</h1>
@@ -218,7 +218,7 @@
                   </el-timeline-item>
 
                   <el-timeline-item
-                    v-if="order.status === '已支付' || order.status === '配送中' || order.status === '已完成'"
+                    v-if="order.status === 'S' || order.status === '已支付' || order.status === '配送中' || order.status === '已完成'"
                     timestamp="支付完成"
                     placement="top"
                     type="success"
@@ -227,7 +227,7 @@
                   </el-timeline-item>
 
                   <el-timeline-item
-                    v-if="order.status === '配送中' || order.status === '已完成'"
+                    v-if="order.status === 'S' || order.status === '配送中' || order.status === '已完成'"
                     timestamp="已发货"
                     placement="top"
                     type="warning"
@@ -303,11 +303,11 @@ onMounted(async () => {
   await fetchOrderDetail(orderId)
 })
 
-// 监听路由参数变化
+// 监听路由参数和查询参数变化（用于从支付页面返回时刷新）
 watch(
-  () => route.params.orderId,
-  (newOrderId, oldOrderId) => {
-    if (newOrderId !== oldOrderId) {
+  [() => route.params.orderId, () => route.query.refresh],
+  ([newOrderId, newRefresh], [oldOrderId, oldRefresh]) => {
+    if (newOrderId !== oldOrderId || newRefresh) {
       fetchOrderDetail(newOrderId)
     }
   }
@@ -353,9 +353,12 @@ const getStatusText = (status) => {
   const statusMap = {
     'P': '待支付',
     '待支付': '待支付',
+    'S': '配送中',
     '已支付': '已支付',
     '配送中': '配送中',
+    'C': '已完成',
     '已完成': '已完成',
+    'X': '已取消',
     '已取消': '已取消'
   }
   return statusMap[status] || status || '未知'
@@ -366,9 +369,12 @@ const getStatusIcon = (status) => {
   const iconMap = {
     'P': '⏳',
     '待支付': '⏳',
+    'S': '🚚',
     '已支付': '💰',
     '配送中': '🚚',
+    'C': '✅',
     '已完成': '✅',
+    'X': '❌',
     '已取消': '❌'
   }
   return iconMap[status] || '📋'
@@ -418,33 +424,15 @@ const handleImageError = (e) => {
   e.target.src = '/images/splash.gif'
 }
 
-// 支付订单
-const payOrder = async () => {
-  try {
-    await ElMessageBox.confirm(
-      '确定要立即支付此订单吗？',
-      '确认支付',
-      {
-        confirmButtonText: '确认支付',
-        cancelButtonText: '稍后再说',
-        type: 'info'
-      }
-    )
+// 返回订单列表页
+const goBackToOrders = () => {
+  router.push('/orders')
+}
 
-    const response = await orderApi.updateOrderStatus(order.value.orderId, '已支付')
-    
-    if (response.code === 200) {
-      ElMessage.success('支付成功！')
-      await fetchOrderDetail(order.value.orderId) // 刷新订单详情
-    } else {
-      ElMessage.error(response.message || '支付失败')
-    }
-  } catch (error) {
-    if (error !== 'cancel') {
-      console.error('支付失败:', error)
-      ElMessage.error('支付失败，请重试')
-    }
-  }
+// 支付订单
+const payOrder = () => {
+  // 跳转到支付页面
+  router.push(`/order/${order.value.orderId}/payment`)
 }
 
 // 取消订单

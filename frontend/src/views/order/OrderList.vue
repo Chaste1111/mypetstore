@@ -277,7 +277,17 @@ const handleFilterChange = () => {
 
 // 统计各状态的订单数量
 const getStatusCount = (status) => {
-  return orders.value.filter(order => order.status === status).length
+  // 处理状态映射：支持中文和代码双重匹配
+  const statusCodes = {
+    'P': ['P', '待支付'],
+    '待支付': ['P', '待支付'],
+    '配送中': ['S', '配送中', '已支付'],
+    '已完成': ['C', '已完成'],
+    '已取消': ['X', '已取消']
+  }
+  
+  const codesToMatch = statusCodes[status] || [status]
+  return orders.value.filter(order => codesToMatch.includes(order.status)).length
 }
 
 // 格式化日期
@@ -299,9 +309,12 @@ const getStatusText = (status) => {
   const statusMap = {
     'P': '待支付',
     '待支付': '待支付',
+    'S': '配送中',
     '已支付': '已支付',
     '配送中': '配送中',
+    'C': '已完成',
     '已完成': '已完成',
+    'X': '已取消',
     '已取消': '已取消'
   }
   return statusMap[status] || status || '未知'
@@ -312,9 +325,12 @@ const getStatusType = (status) => {
   const typeMap = {
     'P': 'warning',
     '待支付': 'warning',
+    'S': 'primary',
     '已支付': '',
     '配送中': 'primary',
+    'C': 'success',
     '已完成': 'success',
+    'X': 'danger',
     '已取消': 'danger'
   }
   return typeMap[status] || 'info'
@@ -326,21 +342,9 @@ const viewOrderDetail = (orderId) => {
 }
 
 // 支付订单
-const payOrder = async (order) => {
-  try {
-    // 更新订单状态为已支付
-    const response = await orderApi.updateOrderStatus(order.orderId, '已支付')
-    
-    if (response.code === 200) {
-      ElMessage.success('支付成功！')
-      await fetchOrders() // 刷新列表
-    } else {
-      ElMessage.error(response.message || '支付失败')
-    }
-  } catch (error) {
-    console.error('支付失败:', error)
-    ElMessage.error('支付失败，请重试')
-  }
+const payOrder = (order) => {
+  // 跳转到支付页面
+  router.push(`/order/${order.orderId}/payment`)
 }
 
 // 取消订单

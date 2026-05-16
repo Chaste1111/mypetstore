@@ -1,5 +1,6 @@
 package csu.web.mypetstore.persistence;
 
+import csu.web.mypetstore.domain.LineItem;
 import csu.web.mypetstore.domain.Order;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
@@ -37,4 +38,9 @@ public interface OrderDao extends BaseMapper<Order> {
      * 根据订单ID删除订单项
      */
     void deleteLineItemsByOrderId(String orderId);
+
+    /**
+     * 根据订单ID查询订单项列表
+     */
+    List<LineItem> getLineItemsByOrderId(String orderId);
 }

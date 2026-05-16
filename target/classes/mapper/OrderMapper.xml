@@ -61,6 +61,13 @@
         FROM ORDERS WHERE ORDERID = #{orderId} AND USERID = #{username}
     </select>
 
+    <!-- 根据订单ID查询订单项列表 -->
+    <select id="getLineItemsByOrderId" resultType="csu.web.mypetstore.domain.LineItem">
+        SELECT ORDERID AS orderId, LINENUM AS lineNumber, ITEMID AS itemId, 
+               QUANTITY AS quantity, UNITPRICE AS unitPrice
+        FROM LINEITEM WHERE ORDERID = #{orderId} ORDER BY LINENUM
+    </select>
+
     <!-- 根据订单ID删除订单项 -->
     <delete id="deleteLineItemsByOrderId">
         DELETE FROM LINEITEM WHERE ORDERID = #{orderId}
