@@ -16,9 +16,12 @@ export default defineConfig({
       '/api': {
         target: 'http://localhost:8080',
         changeOrigin: true
+      },
+      // 代理图片请求到后端的 webapp/images 目录
+      '/images': {
+        target: 'http://localhost:8080',
+        changeOrigin: true
       }
-      // 注意：/images 不再代理，直接使用 frontend/public/images 目录
-      // 如果需要访问后端的图片，可以使用 /backend-images 路径
     }
   }
 })
