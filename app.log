@@ -1,0 +1,1109 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-06-15 20:55:43 [main] INFO  csu.web.mypetstore.MyPetStoreApplication - Starting MyPetStoreApplication v2.0.0 using Java 17.0.19 with PID 16754 (/home/chaste/server/deploy/mypetstore/target/my-pet-store-2.0.0.jar started by chaste in /home/chaste/server/deploy)
+2026-06-15 20:55:43 [main] DEBUG csu.web.mypetstore.MyPetStoreApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-06-15 20:55:43 [main] INFO  csu.web.mypetstore.MyPetStoreApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-15 20:55:45 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-15 20:55:45 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-15 20:55:45 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-06-15 20:55:45 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-15 20:55:45 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1575 ms
+Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
+Initialization Sequence datacenterId:1 workerId:0
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.5 
+2026-06-15 20:55:46 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-06-15 20:55:46 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-06-15 20:55:46 [main] INFO  csu.web.mypetstore.MyPetStoreApplication - Started MyPetStoreApplication in 3.795 seconds (process running for 4.366)
+2026-06-15 20:55:47 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-15 20:55:47 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-15 20:55:47 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@523ee5c3] was not registered for synchronization because synchronization is not active
+2026-06-15 20:55:47 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-15 20:55:47 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7944d8e0
+2026-06-15 20:55:47 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+JDBC Connection [HikariProxyConnection@863742084 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@523ee5c3]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a4da1b6] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@103313851 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a4da1b6]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47bcc123] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1132682508 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47bcc123]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1cda81da] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@286436766 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1cda81da]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30e8a9e9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1079807539 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID AS productId, CATEGORY AS categoryId, NAME AS name, `DESC` AS description FROM PRODUCT WHERE CATEGORY = ?
+==> Parameters: BIRDS(String)
+<==    Columns: productId, categoryId, name, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30e8a9e9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@265faf03] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@576732944 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@265faf03]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a523152] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1047376576 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a523152]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7db7fd44] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2038982186 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID AS productId, CATEGORY AS categoryId, NAME AS name, `DESC` AS description FROM PRODUCT WHERE CATEGORY = ?
+==> Parameters: CATS(String)
+<==    Columns: productId, categoryId, name, description
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7db7fd44]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d2c9fb9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1330481594 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d2c9fb9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e841f35] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1690938389 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e841f35]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@794f51c7] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@857536795 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID AS productId, CATEGORY AS categoryId, NAME AS name, `DESC` AS description FROM PRODUCT WHERE CATEGORY = ?
+==> Parameters: DOGS(String)
+<==    Columns: productId, categoryId, name, description
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==      Total: 4
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@794f51c7]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@63c5c98f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1373858337 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@63c5c98f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@612d35ed] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1247690811 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@612d35ed]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f632769] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@226274844 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID AS productId, CATEGORY AS categoryId, NAME AS name, `DESC` AS description FROM PRODUCT WHERE CATEGORY = ?
+==> Parameters: FISH(String)
+<==    Columns: productId, categoryId, name, description
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==      Total: 4
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f632769]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@295964b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2075988215 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@295964b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62e02e50] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2102471323 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62e02e50]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c068d1c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1748567108 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID AS productId, CATEGORY AS categoryId, NAME AS name, `DESC` AS description FROM PRODUCT WHERE CATEGORY = ?
+==> Parameters: REPTILES(String)
+<==    Columns: productId, categoryId, name, description
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c068d1c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5475993b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@431078283 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5475993b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23a526a9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@495940123 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23a526a9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ca50830] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@178992290 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID AS productId, CATEGORY AS categoryId, NAME AS name, `DESC` AS description FROM PRODUCT WHERE CATEGORY = ?
+==> Parameters: BIRDS(String)
+<==    Columns: productId, categoryId, name, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ca50830]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f51a19c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1203705512 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID AS productId, CATEGORY AS categoryId, NAME AS name, `DESC` AS description FROM PRODUCT WHERE CATEGORY = ?
+==> Parameters: CATS(String)
+<==    Columns: productId, categoryId, name, description
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f51a19c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5fa13e66] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1973835455 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID AS productId, CATEGORY AS categoryId, NAME AS name, `DESC` AS description FROM PRODUCT WHERE CATEGORY = ?
+==> Parameters: BIRDS(String)
+<==    Columns: productId, categoryId, name, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5fa13e66]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5cddb342] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@992783157 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5cddb342]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@446af57b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@475852423 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@446af57b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4cf700fe] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@875820058 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4cf700fe]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b40c426] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@332007678 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b40c426]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b336b6d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@688684758 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b336b6d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26376e94] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@571014794 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26376e94]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a5e9829] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1529373059 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a5e9829]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d147868] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1581682076 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d147868]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3cdf0629] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@910552949 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3cdf0629]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c7b491b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1491808300 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c7b491b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1460b1aa] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1113915214 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1460b1aa]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4660344] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@451370033 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4660344]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13cfc98a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@201615071 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13cfc98a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@385cfe8b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1280899470 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@385cfe8b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2f2be53] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@521026527 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2f2be53]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@163879eb] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2023250579 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT USERID AS username,PASSWORD,EMAIL,FIRSTNAME,LASTNAME,STATUS,ADDR1 AS address1,ADDR2 AS address2,CITY,STATE,ZIP,COUNTRY,PHONE,FAVCATEGORY AS favoriteCategoryId,LANGPREF AS languagePreference,MYLISTOPT AS listOption,BANNEROPT AS bannerOption FROM ACCOUNT WHERE (USERID = ?)
+==> Parameters: 欧英驰(String)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@163879eb]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f1486f9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@217361135 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT USERID AS username,PASSWORD,EMAIL,FIRSTNAME,LASTNAME,STATUS,ADDR1 AS address1,ADDR2 AS address2,CITY,STATE,ZIP,COUNTRY,PHONE,FAVCATEGORY AS favoriteCategoryId,LANGPREF AS languagePreference,MYLISTOPT AS listOption,BANNEROPT AS bannerOption FROM ACCOUNT WHERE (USERID = ?)
+==> Parameters: ouyingchi(String)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f1486f9]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5aa4f596]
+JDBC Connection [HikariProxyConnection@1588158796 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will be managed by Spring
+==>  Preparing: SELECT USERID AS username,PASSWORD,EMAIL,FIRSTNAME,LASTNAME,STATUS,ADDR1 AS address1,ADDR2 AS address2,CITY,STATE,ZIP,COUNTRY,PHONE,FAVCATEGORY AS favoriteCategoryId,LANGPREF AS languagePreference,MYLISTOPT AS listOption,BANNEROPT AS bannerOption FROM ACCOUNT WHERE (USERID = ?)
+==> Parameters: ouyingchi(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5aa4f596]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5aa4f596] from current transaction
+==>  Preparing: INSERT INTO ACCOUNT ( USERID, EMAIL, FIRSTNAME, LASTNAME, STATUS, ADDR1, ADDR2, CITY, STATE, ZIP, COUNTRY, PHONE, FAVCATEGORY, PASSWORD, LANGPREF, MYLISTOPT, BANNEROPT ) VALUES ( ?, ?, ?, ?, 'P', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+==> Parameters: ouyingchi(String), 15663773235@163.com(String), 欧(String), 英驰(String), 1(String), 2(String), 3(String), 4(String), 5(String), 6(String), 15663773235(String), DOGS(String), qwertyuiop123(String), zh_CN(String), 1(Integer), 1(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5aa4f596]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5aa4f596]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5aa4f596]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5aa4f596]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e041b2a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@862587641 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT USERID AS username, EMAIL AS email, FIRSTNAME AS firstName, LASTNAME AS lastName, STATUS AS status, ADDR1 AS address1, ADDR2 AS address2, CITY AS city, STATE AS state, ZIP AS zip, COUNTRY AS country, PHONE AS phone, FAVCATEGORY AS favoriteCategoryId, LANGPREF AS languagePreference, MYLISTOPT AS listOption, BANNEROPT AS bannerOption, PASSWORD AS password FROM ACCOUNT WHERE USERID = ? AND PASSWORD = ?
+==> Parameters: ouyingchi(String), qwertyuiop123(String)
+<==    Columns: username, email, firstName, lastName, status, address1, address2, city, state, zip, country, phone, favoriteCategoryId, languagePreference, listOption, bannerOption, password
+<==        Row: ouyingchi, 15663773235@163.com, 欧, 英驰, P, 1, 2, 3, 4, 5, 6, 15663773235, DOGS, zh_CN, 1, 1, qwertyuiop123
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e041b2a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@296e10a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1178358079 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@296e10a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19c1ef69] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1943919758 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19c1ef69]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@68df782f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@126332749 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID AS productId, CATEGORY AS categoryId, NAME AS name, `DESC` AS description FROM PRODUCT WHERE CATEGORY = ?
+==> Parameters: DOGS(String)
+<==    Columns: productId, categoryId, name, description
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==      Total: 4
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@68df782f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bf962f1] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1453844180 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT WHERE PRODUCTID=?
+==> Parameters: K9-CW-01(String)
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bf962f1]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2516e94a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1132948497 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT i.ITEMID AS itemId, i.PRODUCTID AS productId, i.LISTPRICE AS listPrice, i.UNITCOST AS unitCost, i.SUPPLIER AS supplierId, i.STATUS AS status, i.ATTR1 AS attribute1, i.ATTR2 AS attribute2, i.ATTR3 AS attribute3, i.ATTR4 AS attribute4, i.ATTR5 AS attribute5, p.NAME AS "product.name" FROM ITEM i LEFT JOIN PRODUCT p ON i.PRODUCTID = p.PRODUCTID WHERE i.PRODUCTID = ?
+==> Parameters: K9-CW-01(String)
+<==    Columns: itemId, productId, listPrice, unitCost, supplierId, status, attribute1, attribute2, attribute3, attribute4, attribute5, product.name
+<==        Row: EST-10, K9-CW-01, 2200.00, 1800.00, 名犬基地, P, 幼犬, 金色, 公, 3个月, 已驱虫, 金毛寻回犬
+<==        Row: EST-11, K9-CW-01, 2500.00, 2000.00, 名犬基地, P, 幼犬, 金色, 母, 4个月, 已疫苗, 金毛寻回犬
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2516e94a]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54]
+JDBC Connection [HikariProxyConnection@139132064 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will be managed by Spring
+==>  Preparing: SELECT CARTID AS cartId FROM CART WHERE CARTID = ?
+==> Parameters: ouyingchi(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54] from current transaction
+==>  Preparing: INSERT INTO CART (CARTID) VALUES (?)
+==> Parameters: ouyingchi(String)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54] from current transaction
+==>  Preparing: SELECT i.ITEMID AS itemId, i.PRODUCTID AS productId, i.LISTPRICE AS listPrice, i.UNITCOST AS unitCost, i.SUPPLIER AS supplierId, i.STATUS AS status, i.ATTR1 AS attribute1, i.ATTR2 AS attribute2, i.ATTR3 AS attribute3, i.ATTR4 AS attribute4, i.ATTR5 AS attribute5, p.NAME AS "product.name" FROM ITEM i LEFT JOIN PRODUCT p ON i.PRODUCTID = p.PRODUCTID WHERE i.ITEMID = ?
+==> Parameters: EST-10(String)
+<==    Columns: itemId, productId, listPrice, unitCost, supplierId, status, attribute1, attribute2, attribute3, attribute4, attribute5, product.name
+<==        Row: EST-10, K9-CW-01, 2200.00, 1800.00, 名犬基地, P, 幼犬, 金色, 公, 3个月, 已驱虫, 金毛寻回犬
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54] from current transaction
+==>  Preparing: SELECT QTY FROM INVENTORY WHERE ITEMID = ?
+==> Parameters: EST-10(String)
+<==    Columns: QTY
+<==        Row: 6
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54] from current transaction
+==>  Preparing: INSERT INTO CARTITEM (CARTID, ITEMID, QUANTITY) VALUES (?, ?, ?)
+==> Parameters: ouyingchi(String), EST-10(String), 1(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54] from current transaction
+==>  Preparing: -- CART表只有CARTID字段，无需更新 SELECT 1
+==> Parameters: 
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73efce54]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4056223b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@636120197 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CARTID AS cartId FROM CART WHERE CARTID = ?
+==> Parameters: ouyingchi(String)
+<==    Columns: cartId
+<==        Row: ouyingchi
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4056223b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@429fbe42] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@866720720 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT ci.CARTID AS cartId, ci.ITEMID AS itemId, ci.QUANTITY AS quantity FROM CARTITEM ci WHERE ci.CARTID = ?
+==> Parameters: ouyingchi(String)
+<==    Columns: cartId, itemId, quantity
+<==        Row: ouyingchi, EST-10, 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@429fbe42]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@375dda20] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@135208743 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT i.ITEMID AS itemId, i.PRODUCTID AS productId, i.LISTPRICE AS listPrice, i.UNITCOST AS unitCost, i.SUPPLIER AS supplierId, i.STATUS AS status, i.ATTR1 AS attribute1, i.ATTR2 AS attribute2, i.ATTR3 AS attribute3, i.ATTR4 AS attribute4, i.ATTR5 AS attribute5, p.NAME AS "product.name" FROM ITEM i LEFT JOIN PRODUCT p ON i.PRODUCTID = p.PRODUCTID WHERE i.ITEMID = ?
+==> Parameters: EST-10(String)
+<==    Columns: itemId, productId, listPrice, unitCost, supplierId, status, attribute1, attribute2, attribute3, attribute4, attribute5, product.name
+<==        Row: EST-10, K9-CW-01, 2200.00, 1800.00, 名犬基地, P, 幼犬, 金色, 公, 3个月, 已驱虫, 金毛寻回犬
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@375dda20]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38a2e19e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1643622512 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT QTY FROM INVENTORY WHERE ITEMID = ?
+==> Parameters: EST-10(String)
+<==    Columns: QTY
+<==        Row: 6
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38a2e19e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30671b04] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@767746795 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CARTID AS cartId FROM CART WHERE CARTID = ?
+==> Parameters: ouyingchi(String)
+<==    Columns: cartId
+<==        Row: ouyingchi
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30671b04]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@bdd157c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@57311288 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT ci.CARTID AS cartId, ci.ITEMID AS itemId, ci.QUANTITY AS quantity FROM CARTITEM ci WHERE ci.CARTID = ?
+==> Parameters: ouyingchi(String)
+<==    Columns: cartId, itemId, quantity
+<==        Row: ouyingchi, EST-10, 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@bdd157c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3af3e7bf] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1508270952 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT i.ITEMID AS itemId, i.PRODUCTID AS productId, i.LISTPRICE AS listPrice, i.UNITCOST AS unitCost, i.SUPPLIER AS supplierId, i.STATUS AS status, i.ATTR1 AS attribute1, i.ATTR2 AS attribute2, i.ATTR3 AS attribute3, i.ATTR4 AS attribute4, i.ATTR5 AS attribute5, p.NAME AS "product.name" FROM ITEM i LEFT JOIN PRODUCT p ON i.PRODUCTID = p.PRODUCTID WHERE i.ITEMID = ?
+==> Parameters: EST-10(String)
+<==    Columns: itemId, productId, listPrice, unitCost, supplierId, status, attribute1, attribute2, attribute3, attribute4, attribute5, product.name
+<==        Row: EST-10, K9-CW-01, 2200.00, 1800.00, 名犬基地, P, 幼犬, 金色, 公, 3个月, 已驱虫, 金毛寻回犬
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3af3e7bf]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18b1f03c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1037705866 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT QTY FROM INVENTORY WHERE ITEMID = ?
+==> Parameters: EST-10(String)
+<==    Columns: QTY
+<==        Row: 6
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18b1f03c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2081cbf0] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@856478159 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2081cbf0]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7259be0] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@122396447 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7259be0]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78e544d3] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@353200903 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CARTID AS cartId FROM CART WHERE CARTID = ?
+==> Parameters: ouyingchi(String)
+<==    Columns: cartId
+<==        Row: ouyingchi
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78e544d3]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@382f8ceb] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1790874849 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT ci.CARTID AS cartId, ci.ITEMID AS itemId, ci.QUANTITY AS quantity FROM CARTITEM ci WHERE ci.CARTID = ?
+==> Parameters: ouyingchi(String)
+<==    Columns: cartId, itemId, quantity
+<==        Row: ouyingchi, EST-10, 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@382f8ceb]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@366c037] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1198152804 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT i.ITEMID AS itemId, i.PRODUCTID AS productId, i.LISTPRICE AS listPrice, i.UNITCOST AS unitCost, i.SUPPLIER AS supplierId, i.STATUS AS status, i.ATTR1 AS attribute1, i.ATTR2 AS attribute2, i.ATTR3 AS attribute3, i.ATTR4 AS attribute4, i.ATTR5 AS attribute5, p.NAME AS "product.name" FROM ITEM i LEFT JOIN PRODUCT p ON i.PRODUCTID = p.PRODUCTID WHERE i.ITEMID = ?
+==> Parameters: EST-10(String)
+<==    Columns: itemId, productId, listPrice, unitCost, supplierId, status, attribute1, attribute2, attribute3, attribute4, attribute5, product.name
+<==        Row: EST-10, K9-CW-01, 2200.00, 1800.00, 名犬基地, P, 幼犬, 金色, 公, 3个月, 已驱虫, 金毛寻回犬
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@366c037]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@613fafa4] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1416473804 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT QTY FROM INVENTORY WHERE ITEMID = ?
+==> Parameters: EST-10(String)
+<==    Columns: QTY
+<==        Row: 6
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@613fafa4]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@91f23e0] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@143934431 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CARTID AS cartId FROM CART WHERE CARTID = ?
+==> Parameters: ouyingchi(String)
+<==    Columns: cartId
+<==        Row: ouyingchi
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@91f23e0]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7603aa18] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@108234523 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT ci.CARTID AS cartId, ci.ITEMID AS itemId, ci.QUANTITY AS quantity FROM CARTITEM ci WHERE ci.CARTID = ?
+==> Parameters: ouyingchi(String)
+<==    Columns: cartId, itemId, quantity
+<==        Row: ouyingchi, EST-10, 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7603aa18]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5361ae37] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@325014200 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT i.ITEMID AS itemId, i.PRODUCTID AS productId, i.LISTPRICE AS listPrice, i.UNITCOST AS unitCost, i.SUPPLIER AS supplierId, i.STATUS AS status, i.ATTR1 AS attribute1, i.ATTR2 AS attribute2, i.ATTR3 AS attribute3, i.ATTR4 AS attribute4, i.ATTR5 AS attribute5, p.NAME AS "product.name" FROM ITEM i LEFT JOIN PRODUCT p ON i.PRODUCTID = p.PRODUCTID WHERE i.ITEMID = ?
+==> Parameters: EST-10(String)
+<==    Columns: itemId, productId, listPrice, unitCost, supplierId, status, attribute1, attribute2, attribute3, attribute4, attribute5, product.name
+<==        Row: EST-10, K9-CW-01, 2200.00, 1800.00, 名犬基地, P, 幼犬, 金色, 公, 3个月, 已驱虫, 金毛寻回犬
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5361ae37]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39d5baac] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1598613582 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT QTY FROM INVENTORY WHERE ITEMID = ?
+==> Parameters: EST-10(String)
+<==    Columns: QTY
+<==        Row: 6
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39d5baac]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@b52919c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@485859546 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT CARTID AS cartId FROM CART WHERE CARTID = ?
+==> Parameters: ouyingchi(String)
+<==    Columns: cartId
+<==        Row: ouyingchi
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@b52919c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48f93cf7] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1463323141 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT ci.CARTID AS cartId, ci.ITEMID AS itemId, ci.QUANTITY AS quantity FROM CARTITEM ci WHERE ci.CARTID = ?
+==> Parameters: ouyingchi(String)
+<==    Columns: cartId, itemId, quantity
+<==        Row: ouyingchi, EST-10, 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48f93cf7]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e184ac4] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@789038452 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT i.ITEMID AS itemId, i.PRODUCTID AS productId, i.LISTPRICE AS listPrice, i.UNITCOST AS unitCost, i.SUPPLIER AS supplierId, i.STATUS AS status, i.ATTR1 AS attribute1, i.ATTR2 AS attribute2, i.ATTR3 AS attribute3, i.ATTR4 AS attribute4, i.ATTR5 AS attribute5, p.NAME AS "product.name" FROM ITEM i LEFT JOIN PRODUCT p ON i.PRODUCTID = p.PRODUCTID WHERE i.ITEMID = ?
+==> Parameters: EST-10(String)
+<==    Columns: itemId, productId, listPrice, unitCost, supplierId, status, attribute1, attribute2, attribute3, attribute4, attribute5, product.name
+<==        Row: EST-10, K9-CW-01, 2200.00, 1800.00, 名犬基地, P, 幼犬, 金色, 公, 3个月, 已驱虫, 金毛寻回犬
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e184ac4]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@77b5de9c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@725938139 wrapping com.mysql.cj.jdbc.ConnectionImpl@7944d8e0] will not be managed by Spring
+==>  Preparing: SELECT QTY FROM INVENTORY WHERE ITEMID = ?
+==> Parameters: EST-10(String)
+<==    Columns: QTY
+<==        Row: 6
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@77b5de9c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12ddbd3b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1687690730 wrapping com.mysql.cj.jdbc.ConnectionImpl@65732b05] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12ddbd3b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7de49b72] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1781179643 wrapping com.mysql.cj.jdbc.ConnectionImpl@65732b05] will not be managed by Spring
+==>  Preparing: SELECT ORDERID AS orderId, USERID AS username, ORDERDATE AS orderDate, SHIPADDR1 AS shippingAddress1, SHIPADDR2 AS shippingAddress2, SHIPCITY AS shippingCity, SHIPSTATE AS shippingState, SHIPZIP AS shippingZip, SHIPCOUNTRY AS shippingCountry, BILLADDR1 AS billingAddress1, BILLADDR2 AS billingAddress2, BILLCITY AS billingCity, BILLSTATE AS billingState, BILLZIP AS billingZip, BILLCOUNTRY AS billingCountry, COURIER AS courier, TOTALPRICE AS totalPrice, BILLTOFIRSTNAME AS billToFirstName, BILLTOLASTNAME AS billToLastName, SHIPTOFIRSTNAME AS shipToFirstName, SHIPTOLASTNAME AS shipToLastName, CREDITCARD AS creditCard, EXPRDATE AS exprDate, CARDTYPE AS cardType, LOCALE AS locale, STATUS AS status FROM ORDERS WHERE USERID = ? AND STATUS != 'X' ORDER BY ORDERDATE DESC
+==> Parameters: ouyingchi(String)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7de49b72]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@74c85910] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@961552909 wrapping com.mysql.cj.jdbc.ConnectionImpl@65732b05] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@74c85910]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72b21a78] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2053021512 wrapping com.mysql.cj.jdbc.ConnectionImpl@65732b05] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72b21a78]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12a4e247] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1903824680 wrapping com.mysql.cj.jdbc.ConnectionImpl@65732b05] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID AS productId, CATEGORY AS categoryId, NAME AS name, `DESC` AS description FROM PRODUCT WHERE CATEGORY = ?
+==> Parameters: FISH(String)
+<==    Columns: productId, categoryId, name, description
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==      Total: 4
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12a4e247]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6df54b19] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1482582300 wrapping com.mysql.cj.jdbc.ConnectionImpl@65732b05] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT WHERE PRODUCTID=?
+==> Parameters: FI-SW-02(String)
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6df54b19]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@563494bd] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@254603737 wrapping com.mysql.cj.jdbc.ConnectionImpl@65732b05] will not be managed by Spring
+==>  Preparing: SELECT i.ITEMID AS itemId, i.PRODUCTID AS productId, i.LISTPRICE AS listPrice, i.UNITCOST AS unitCost, i.SUPPLIER AS supplierId, i.STATUS AS status, i.ATTR1 AS attribute1, i.ATTR2 AS attribute2, i.ATTR3 AS attribute3, i.ATTR4 AS attribute4, i.ATTR5 AS attribute5, p.NAME AS "product.name" FROM ITEM i LEFT JOIN PRODUCT p ON i.PRODUCTID = p.PRODUCTID WHERE i.PRODUCTID = ?
+==> Parameters: FI-SW-02(String)
+<==    Columns: itemId, productId, listPrice, unitCost, supplierId, status, attribute1, attribute2, attribute3, attribute4, attribute5, product.name
+<==        Row: EST-3, FI-SW-02, 18.50, 12.00, 海洋世界, P, 小型, 虎纹, 3-4cm, 热带淡水, 群游, 虎皮鱼
+<==        Row: EST-4, FI-SW-02, 25.00, 16.00, 海洋世界, P, 中型, 红虎纹, 4-6cm, 热带淡水, 群游, 虎皮鱼
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@563494bd]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d01d3b0] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@334578091 wrapping com.mysql.cj.jdbc.ConnectionImpl@65732b05] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID AS productId, CATEGORY AS categoryId, NAME AS name, `DESC` AS description FROM PRODUCT WHERE CATEGORY = ?
+==> Parameters: FISH(String)
+<==    Columns: productId, categoryId, name, description
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==      Total: 4
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d01d3b0]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28ba9408] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@57401444 wrapping com.mysql.cj.jdbc.ConnectionImpl@65732b05] will not be managed by Spring
+==>  Preparing: SELECT CATEGORYID AS categoryId, NAME AS name, `DESC` AS description FROM CATEGORY
+==> Parameters: 
+<==    Columns: categoryId, name, description
+<==        Row: BIRDS, 鸟类, 各类观赏鸟
+<==        Row: CATS, 猫咪, 各类猫种宠物
+<==        Row: DOGS, 狗狗, 各类犬种宠物
+<==        Row: FISH, 鱼类, 各种观赏鱼和水生宠物
+<==        Row: REPTILES, 爬行类, 各类爬行宠物
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28ba9408]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ba839f3] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@522300598 wrapping com.mysql.cj.jdbc.ConnectionImpl@65732b05] will not be managed by Spring
+==>  Preparing: SELECT PRODUCTID,CATEGORY AS categoryId,NAME,`DESC` AS description FROM PRODUCT
+==> Parameters: 
+<==    Columns: PRODUCTID, categoryId, NAME, description
+<==        Row: AV-CB-01, BIRDS, 鹦鹉, 会说话的彩色鹦鹉，智商极高
+<==        Row: AV-SB-01, BIRDS, 金丝雀, 歌声优美的笼中鸟，色彩鲜艳
+<==        Row: FI-FW-01, FISH, 锦鲤, 吉祥的观赏鱼，适合庭院池塘
+<==        Row: FI-FW-02, FISH, 金鱼, 经典的观赏鱼，易于饲养
+<==        Row: FI-SW-01, FISH, 天使鱼, 美丽的热带淡水鱼，适合初学者饲养
+<==        Row: FI-SW-02, FISH, 虎皮鱼, 色彩斑斓的热带鱼，群游效果极佳
+<==        Row: FL-DLH-01, CATS, 暹罗猫, 活泼好动的短毛猫，善于交流
+<==        Row: FL-DSH-01, CATS, 波斯猫, 长毛优雅的猫咪，性格温顺
+<==        Row: FL-MC-01, CATS, 英短蓝猫, 圆脸憨厚的猫咪，性格独立
+<==        Row: K9-BD-01, DOGS, 拉布拉多, 友善的家庭宠物犬，智商排名第七
+<==        Row: K9-CW-01, DOGS, 金毛寻回犬, 聪明忠诚的工作犬，非常适合家庭
+<==        Row: K9-PO-01, DOGS, 泰迪犬, 小巧可爱的伴侣犬，不掉毛
+<==        Row: K9-RT-01, DOGS, 柯基犬, 短腿可爱的牧牛犬，活泼好动
+<==        Row: RP-LI-01, REPTILES, 鬃狮蜥, 温顺的入门级爬宠，适合新手
+<==        Row: RP-SN-01, REPTILES, 玉米蛇, 颜色多变的宠物蛇，无毒温顺
+<==      Total: 15
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ba839f3]

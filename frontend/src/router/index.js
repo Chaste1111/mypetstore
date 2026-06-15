@@ -87,6 +87,12 @@ const routes = [
     meta: { title: '修改密码', requiresAuth: true }
   },
   {
+    path: '/about',
+    name: 'About',
+    component: () => import('@/views/About.vue'),
+    meta: { title: '关于我们' }
+  },
+  {
     path: '/help',
     name: 'Help',
     component: () => import('@/views/Help.vue'),

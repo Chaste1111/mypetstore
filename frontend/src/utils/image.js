@@ -12,40 +12,32 @@ export const categoryIcons = {
 /**
  * 产品图片映射表
  * 根据产品ID返回对应的图片路径
- * 优先使用 PNG 格式（更清晰）
  */
 export const productImages = {
   // 鱼类 (FISH)
-  'FI-SW-01': '/images/jinli.png',        // 锦鲤
-  'FI-SW-02': '/images/jinyu.png',        // 金鱼
-  'FI-FW-01': '/images/fish3.gif',        // 其他鱼类（备用）
-  'FI-FW-02': '/images/fish4.gif',        // 其他鱼类（备用）
-  
+  'FI-SW-01': '/images/fish3.gif',
+  'FI-SW-02': '/images/fish4.gif',
+  'FI-FW-01': '/images/jinli.png',
+  'FI-FW-02': '/images/jinyu.png',
+
   // 狗类 (DOGS)
-  'K9-BD-01': '/images/jinmao.png',       // 金毛犬
-  'K9-BD-02': '/images/labuladuo.png',    // 拉布拉多
-  'K9-RT-01': '/images/keji.png',         // 柯基犬
-  'K9-RT-02': '/images/hashiqi.png',      // 哈士奇
-  'K9-DL-01': '/images/dog5.gif',         // 其他犬类（备用）
-  'K9-DL-02': '/images/dog6.gif',         // 其他犬类（备用）
-  
+  'K9-BD-01': '/images/labuladuo.png',
+  'K9-CW-01': '/images/jinmao.png',
+  'K9-PO-01': '/images/dog5.gif',
+  'K9-RT-01': '/images/keji.png',
+
   // 猫类 (CATS)
-  'AV-CB-01': '/images/yinduanlanmao.png', // 英短蓝猫
-  'AV-CB-02': '/images/buoumao.png',      // 布偶猫
-  'AV-CB-03': '/images/jumao.png',        // 橘猫
-  'FL-DSH-01': '/images/cat1.gif',        // 其他猫类（备用）
-  'FL-DSH-02': '/images/cat2.gif',        // 其他猫类（备用）
-  'FL-DLH-01': '/images/cat1.gif',        // 其他猫类（备用）
-  'FL-DLH-02': '/images/cat2.gif',        // 其他猫类（备用）
-  
+  'FL-DSH-01': '/images/buoumao.png',
+  'FL-DLH-01': '/images/cat1.gif',
+  'FL-MC-01': '/images/yinduanlanmao.png',
+
   // 鸟类 (BIRDS)
-  'AV-SB-01': '/images/yingwu.png',       // 鹦鹉
-  'AV-SB-02': '/images/jinsique.png',     // 金丝雀
-  'AV-SB-03': '/images/wenniao.png',      // 文鸟
-  
+  'AV-CB-01': '/images/yingwu.png',
+  'AV-SB-01': '/images/jinsique.png',
+
   // 爬行类 (REPTILES)
-  'RP-LI-01': '/images/lizard1.gif',      // 蜥蜴（暂无PNG）
-  'RP-SN-01': '/images/snake1.gif'        // 蛇（暂无PNG）
+  'RP-LI-01': '/images/lizard1.gif',
+  'RP-SN-01': '/images/snake1.gif'
 }
 
 /**

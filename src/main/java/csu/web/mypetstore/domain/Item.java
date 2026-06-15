@@ -44,10 +44,10 @@ public class Item implements Serializable {
     private BigDecimal unitCost;
 
     /**
-     * 供应商ID
+     * 供应商
      */
     @TableField("SUPPLIER")
-    private int supplierId;
+    private String supplier;
 
     /**
      * 状态

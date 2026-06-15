@@ -3,8 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <!-- ==================== 父项目配置 ==================== -->
+     <!-- ==================== 父项目配置 ==================== -->
     <!-- 使用 Spring Boot 3.2.x 作为父项目，提供统一的依赖管理 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -22,8 +21,10 @@
 
     <!-- ==================== 属性配置 ==================== -->
     <properties>
-        <!-- Java 版本设置为 21 -->
-        <java.version>21</java.version>
+        <java.version>17</java.version>
+        <!-- 文件编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- MyBatis Plus 版本 -->
         <mybatis-plus.version>3.5.5</mybatis-plus.version>
     </properties>

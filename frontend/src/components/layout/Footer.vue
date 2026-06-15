@@ -3,12 +3,12 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>关于我们</h3>
+          <router-link to="/about" class="footer-title-link"><h3>关于我们</h3></router-link>
           <p>MyPetStore是您值得信赖的宠物商店，提供各类优质宠物及相关用品。</p>
         </div>
 
         <div class="footer-section">
-          <h3>快速链接</h3>
+          <router-link to="/help" class="footer-title-link"><h3>快速链接</h3></router-link>
           <ul>
             <li><router-link to="/">首页</router-link></li>
             <li><router-link to="/help">帮助中心</router-link></li>
@@ -17,7 +17,7 @@
         </div>
 
         <div class="footer-section">
-          <h3>联系方式</h3>
+          <router-link to="/about" class="footer-title-link"><h3>联系方式</h3></router-link>
           <ul>
             <li>电话: 400-123-4567</li>
             <li>邮箱: support@mypetstore.com</li>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="footer-section">
-          <h3>关注我们</h3>
+          <router-link to="/about" class="footer-title-link"><h3>关注我们</h3></router-link>
           <div class="social-links">
             <el-icon :size="24"><ChatDotRound /></el-icon>
             <el-icon :size="24"><Message /></el-icon>
@@ -60,6 +60,7 @@
   margin-bottom: var(--spacing-xl);
 }
 
+.footer-title-link { text-decoration: none; color: inherit; }
 .footer-section h3 {
   font-size: 16px;
   margin-bottom: var(--spacing-md);

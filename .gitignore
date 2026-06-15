@@ -4,4 +4,6 @@
 #Web项目的out目录
 out/
 
-mypetstore.iml
+mypetstore.imlapplication-secret.yml
+.env
+.env
